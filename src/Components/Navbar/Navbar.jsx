@@ -1,14 +1,8 @@
-import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router';
+import { NavLink } from 'react-router';
 import logo from '../../assets/logo.png'
-import profile from '../../assets/profile.jpg'
-import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
-import { toast, ToastContainer } from 'react-toastify';
 
 const Navbar = () => {
 
-    const { user, logOut } = useContext(AuthContext);
-    console.log(user);
     const links = (
         <>
             <li>
@@ -23,22 +17,6 @@ const Navbar = () => {
         </>
     );
 
-    // logout btn control
-
-    const handleLogOutBtn = () => {
-        logOut()
-            .then(() => {
-                setTimeout(() => {
-                    toast.success("✅ Registration successful!");
-                }, 500);
-            })
-            .catch((error) => {
-                toast.error(`❌ ${error.message}`);
-            });
-
-
-
-    }
 
     return (
         <div className="navbar bg-[#f6f8fa] shadow-sm text-black">
@@ -65,20 +43,7 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-white text-black rounded-box z-1 mt-3 w-52 p-2 shadow"
                     >
                         {links}
-                        {user ? (
-                            <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                                LogOut
-                            </NavLink>
-                        ) : (
-                            <>
-                                <NavLink to="/login" className="btn  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                                    Log in
-                                </NavLink>
-                                <NavLink to="/register" className="btn mt-2  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                                    Register
-                                </NavLink>
-                            </>
-                        )}
+                        <button>test</button>
                     </ul>
 
                 </div>
@@ -93,29 +58,14 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end gap-2">
-                {
-                    <Link to="/profile">
-                        <img className='w-13 border-1 border-black rounded-full' src={user ? user.photoURL : profile} alt='' />
-                    </Link>
-                }
-                {user ? (
-                    <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                        LogOut
-                    </NavLink>
-                ) : (
-                    <>
-                        <NavLink to="/login" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                            Log in
-                        </NavLink>
-                        <NavLink to="/register" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                            Register
-                        </NavLink>
-                    </>
-                )}
+                <NavLink to="/login" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                    Log in
+                </NavLink>
+                <NavLink to="/register" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                    Register
+                </NavLink>
 
             </div>
-            <ToastContainer position="bottom-center" />
-
         </div>
     );
 };
