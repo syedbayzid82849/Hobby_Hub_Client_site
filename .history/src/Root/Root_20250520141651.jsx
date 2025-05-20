@@ -9,6 +9,7 @@ const Root = () => {
             <div className="flex-grow">
                 <Outlet></Outlet>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
