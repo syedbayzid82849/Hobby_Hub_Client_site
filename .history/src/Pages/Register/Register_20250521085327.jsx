@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
+import toast from "react-hot-toast";
 import { Link } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 

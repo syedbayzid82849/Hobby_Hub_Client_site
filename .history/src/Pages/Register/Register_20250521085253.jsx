@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
+import toast from "react-hot-toast";
 import { Link } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 
@@ -17,7 +18,7 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const password = form.password.value;
 
-        console.log(name, email, photoURL, password);
+        
 
     };
 
