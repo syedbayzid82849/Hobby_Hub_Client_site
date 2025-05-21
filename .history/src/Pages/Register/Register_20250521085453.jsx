@@ -13,7 +13,9 @@ const Register = () => {
         e.preventDefault();
 
         const form = e.target;
+        const name = form.name.value;
         const email = form.email.value;
+        const photoURL = form.photoURL.value;
         const password = form.password.value;
 
         // password check 
@@ -35,16 +37,7 @@ const Register = () => {
             return;
         }
 
-        createUser(email, password)
-            .then(result => {
-                console.log(result.user);
-                toast.success("Registered successfully ✅");
-                form.reset();
-            })
-            .catch((error) => {
-                console.log(error);
-                toast.error(error.message);
-            });
+
     };
 
     // google btn
