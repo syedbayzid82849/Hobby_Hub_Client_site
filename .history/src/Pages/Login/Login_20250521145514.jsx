@@ -75,7 +75,7 @@ const Login = () => {
                         <input autoComplete="current-password" type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md " />
                     </div>
                 </div>
-                <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Log in</button>
+                <button type="button" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Log in</button>
             </form>
             <p className="text-center mt-4 text-sm">
                 Don't have an account?{" "}

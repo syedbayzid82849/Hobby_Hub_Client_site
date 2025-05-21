@@ -1,21 +1,7 @@
-import { NavLink, Link } from 'react-router';
+import { NavLink } from 'react-router';
 import logo from '../../assets/logo.png'
-import { useContext } from 'react';
-import { AuthContext } from '../../Contexts/AuthContext';
-import profile from '../../assets/profile.jpg'
-
 
 const Navbar = () => {
-    const { user, logOutUser } = useContext(AuthContext);
-    console.log(user);
-
-    const handleLogOutBtn = () => {
-        logOutUser().then(() => {
-            // optional: toast or redirect
-        }).catch(error => {
-            console.error(error);
-        });
-    };
 
     const links = (
         <>
@@ -60,20 +46,6 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-white text-black rounded-box z-1 mt-3 w-52 p-2 shadow"
                     >
                         {links}
-                        {user ? (
-                            <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                                LogOut
-                            </NavLink>
-                        ) : (
-                            <>
-                                <NavLink to="/login" className="btn  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                                    Log in
-                                </NavLink>
-                                <NavLink to="/register" className="btn mt-2  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                                    Register
-                                </NavLink>
-                            </>
-                        )}
                     </ul>
 
                 </div>
@@ -88,25 +60,13 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end gap-2">
-                {
-                    <Link to="/profile">
-                        <img className='w-13 border-1 border-black rounded-full' src={user ? user.photoURL : profile} alt='' />
-                    </Link>
-                }
-                {user ? (
-                    <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                        LogOut
-                    </NavLink>
-                ) : (
-                    <>
-                        <NavLink to="/login" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                            Log in
-                        </NavLink>
-                        <NavLink to="/register" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
-                            Register
-                        </NavLink>
-                    </>
-                )}
+                <NavLink to="/login" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                    Log in
+                </NavLink>
+                <NavLink to="/register" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                    Register
+                </NavLink>
+
             </div>
         </div>
     );

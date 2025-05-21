@@ -10,11 +10,13 @@ const Navbar = () => {
     console.log(user);
 
     const handleLogOutBtn = () => {
-        logOutUser().then(() => {
-            // optional: toast or redirect
-        }).catch(error => {
-            console.error(error);
-        });
+        // logOutUser().then(() => {
+        //     // optional: toast or redirect
+        // }).catch(error => {
+        //     console.error(error);
+        // });
+            console.log(user);
+
     };
 
     const links = (

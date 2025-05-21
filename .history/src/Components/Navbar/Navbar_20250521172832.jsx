@@ -61,7 +61,7 @@ const Navbar = () => {
                     >
                         {links}
                         {user ? (
-                            <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                            <NavLink onClick={() => { handleLogOutBtn()} to="/" className="btn  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
                                 LogOut
                             </NavLink>
                         ) : (

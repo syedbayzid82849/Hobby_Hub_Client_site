@@ -7,7 +7,6 @@ import profile from '../../assets/profile.jpg'
 
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext);
-    console.log(user);
 
     const handleLogOutBtn = () => {
         logOutUser().then(() => {
