@@ -37,6 +37,16 @@ const Register = () => {
             return;
         }
 
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success("Registered successfully ✅");
+                form.reset();
+            })
+            .catch((error) => {
+                console.log(error);
+                toast.error(error.message);
+            });
     };
 
     // google btn

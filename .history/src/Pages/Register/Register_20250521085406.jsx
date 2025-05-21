@@ -18,24 +18,7 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const password = form.password.value;
 
-        // password check 
-        const isUpperCase = /[A-Z]/.test(password);
-        const isLowerCase = /[a-z]/.test(password);
-        const isLongEnough = password.length >= 6;
-        if (!isUpperCase) {
-            toast.error("Password must contain at least one uppercase letter");
-            return;
-        }
-
-        if (!isLowerCase) {
-            toast.error("Password must contain at least one lowercase letter");
-            return;
-        }
-
-        if (!isLongEnough) {
-            toast.error("Password must be at least 6 characters long");
-            return;
-        }
+        console.log(name, email, photoURL, password);
 
     };
 
