@@ -5,12 +5,12 @@ import { AuthContext } from '../../Contexts/AuthContext';
 
 const Login = () => {
 
-    const { loginUserWithGoogle } = useContext(AuthContext);
+    const { createUserWithGoogle } = useContext(AuthContext);
 
     const navigate = useNavigate()
 
     const handleLoginGoogleBtn = () => {
-        loginUserWithGoogle()
+        createUserWithGoogle()
             .then(result => {
                 console.log(result.user);
                 toast.success("Registered with Google ✅");
@@ -18,8 +18,6 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error);
-                toast.error("not do it");
-
             });
     }
     return (

@@ -18,9 +18,7 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, provider)
     }
 
-    
-
-    // login with google
+    // register with google
     const loginUserWithGoogle = () => {
         return signInWithPopup(auth, provider)
     }

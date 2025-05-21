@@ -7,20 +7,7 @@ const Login = () => {
 
     const { loginUserWithGoogle } = useContext(AuthContext);
 
-    const navigate = useNavigate()
 
-    const handleLoginGoogleBtn = () => {
-        loginUserWithGoogle()
-            .then(result => {
-                console.log(result.user);
-                toast.success("Registered with Google ✅");
-                navigate("/");
-            })
-            .catch(error => {
-                console.log(error);
-                toast.error("not do it");
-
-            });
     }
     return (
         <div className="w-full max-w-md mx-auto my-5 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
