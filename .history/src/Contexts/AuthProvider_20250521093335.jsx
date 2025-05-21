@@ -1,12 +1,12 @@
 import React from 'react';
 import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase.init';
+import { GoogleAuthProvider } from "firebase/auth";
 
 
 
 const AuthProvider = ({ children }) => {
-    const provider = new GoogleAuthProvider();
 
     // register with email pass
     const createUser = (email, Password) => {
@@ -14,23 +14,23 @@ const AuthProvider = ({ children }) => {
     };
 
     // register with google
-    const createUserWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    const createUserWithGoogle = () =>{
         return signInWithPopup(auth, provider)
+
     }
-    
 
 
     const userInfo = {
         createUser,
-        createUserWithGoogle,
-        loginUserWithGoogle
+
     }
 
 
     return (
-        <AuthContext.Provider value={userInfo}>
+        <AuthContext value={userInfo}>
             {children}
-        </AuthContext.Provider>
+        </AuthContext>
     );
 };
 

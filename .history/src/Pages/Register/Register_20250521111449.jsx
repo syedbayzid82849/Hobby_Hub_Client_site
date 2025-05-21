@@ -80,20 +80,24 @@ const Register = () => {
                 </div>
                 <form onSubmit={handleRegister} className="space-y-4">
                     <div>
-                        <label className="block mb-1 font-semibold">Name</label>
+                        <label 
+                        className="block mb-1 font-semibold">Name</label>
                         <input type="text" name="name" required className="input input-bordered w-full" />
                     </div>
                     <div>
-                        <label className="block mb-1 font-semibold">Email</label>
-                        <input autoComplete="email" type="email" name="email" required className="input input-bordered w-full" />
+                        <label 
+                        className="block mb-1 font-semibold">Email</label>
+                        <input type="email" name="email" required className="input input-bordered w-full" />
                     </div>
                     <div>
-                        <label className="block mb-1 font-semibold">Photo URL</label>
-                        <input autoComplete="url" type="text" name="photoURL" required className="input input-bordered w-full" />
+                        <label 
+                        className="block mb-1 font-semibold">Photo URL</label>
+                        <input type="text" name="photoURL" required className="input input-bordered w-full" />
                     </div>
                     <div>
-                        <label className="block mb-1 font-semibold">Password</label>
-                        <input autoComplete="new-password" type="password" name="password" required className="input input-bordered w-full" />
+                        <label 
+                        className="block mb-1 font-semibold">Password</label>
+                        <input type="password" name="password" required className="input input-bordered w-full" />
                     </div>
                     <button type="submit" className="btn btn-primary w-full">Register</button>
                 </form>

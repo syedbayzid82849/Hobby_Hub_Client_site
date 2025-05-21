@@ -6,7 +6,6 @@ import { auth } from '../firebase.init';
 
 
 const AuthProvider = ({ children }) => {
-    const provider = new GoogleAuthProvider();
 
     // register with email pass
     const createUser = (email, Password) => {
@@ -14,16 +13,21 @@ const AuthProvider = ({ children }) => {
     };
 
     // register with google
+    const provider = new GoogleAuthProvider();
     const createUserWithGoogle = () => {
         return signInWithPopup(auth, provider)
     }
-    
+
+    // register with google
+    const provider = new GoogleAuthProvider();
+    const loginUserWithGoogle = () => {
+        return signInWithPopup(auth, provider)
+    }
 
 
     const userInfo = {
         createUser,
-        createUserWithGoogle,
-        loginUserWithGoogle
+        createUserWithGoogle
     }
 
 

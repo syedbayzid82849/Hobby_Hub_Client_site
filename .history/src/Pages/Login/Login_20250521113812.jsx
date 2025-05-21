@@ -1,10 +1,24 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Contexts/AuthContext';
 
 const Login = () => {
 
-    const { loginUserWithGoogle } = useContext(AuthContext);
-        console.log('od')
+    const { createUserWithGoogle } = useContext(AuthContext);
+
+    const navigate = useNavigate()
+
+    const handleLoginGoogleBtn = () => {
+        createUserWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                toast.success("Registered with Google ✅");
+                navigate("/");#
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
     return (
         <div className="w-full max-w-md mx-auto my-5 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">

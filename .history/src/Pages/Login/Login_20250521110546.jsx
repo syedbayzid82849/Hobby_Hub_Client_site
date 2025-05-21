@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../Contexts/AuthContext';
+import React from 'react';
+import { Link } from 'react-router';
 
-const Login = () => {
-
-    const { loginUserWithGoogle } = useContext(AuthContext);
-        console.log('od')
+const Login = () => {\
+    const handleLoginGoogleBtn = ()=>{
+        const 
     }
     return (
         <div className="w-full max-w-md mx-auto my-5 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
@@ -27,14 +26,14 @@ const Login = () => {
                 <div className="space-y-4">
                     <div className="space-y-2">
                         <label htmlFor="email" className="block text-sm">Email address</label>
-                        <input autoComplete="email" type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                        <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
                     <div className="space-y-2">
                         <div className="flex justify-between">
                             <label htmlFor="password" className="text-sm">Password</label>
                             <a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-600">Forgot password?</a>
                         </div>
-                        <input autoComplete="current-password" type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md " />
+                        <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
                 </div>
                 <button type="button" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Log in</button>

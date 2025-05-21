@@ -4,7 +4,7 @@ import { AuthContext } from '../../Contexts/AuthContext';
 const Login = () => {
 
     const { loginUserWithGoogle } = useContext(AuthContext);
-        console.log('od')
+        console.log('')
     }
     return (
         <div className="w-full max-w-md mx-auto my-5 p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">

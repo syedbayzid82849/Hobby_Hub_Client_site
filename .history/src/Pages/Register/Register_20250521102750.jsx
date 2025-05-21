@@ -1,15 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
 import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 
 
 const Register = () => {
-    const { createUser, createUserWithGoogle } = useContext(AuthContext);
-    const navigate = useNavigate();
+    const { createUser } = useContext(AuthContext);
+    console.log(createUser);
 
-    // register with email and pass
     const handleRegister = (e) => {
         e.preventDefault();
 
@@ -49,16 +48,8 @@ const Register = () => {
     };
 
     // google btn
-    const handleGoogleBtn = () => {
-        createUserWithGoogle()
-            .then(result => {
-                console.log(result.user);
-                toast.success("Registered with Google ✅");
-                navigate("/"); // ✅ redirect
-            })
-            .catch(error => {
-                console.error(error);
-            });
+    const handleGoogleBtn =( ) =>{
+        console.log('od')
     }
 
     return (
@@ -85,15 +76,15 @@ const Register = () => {
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold">Email</label>
-                        <input autoComplete="email" type="email" name="email" required className="input input-bordered w-full" />
+                        <input type="email" name="email" required className="input input-bordered w-full" />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold">Photo URL</label>
-                        <input autoComplete="url" type="text" name="photoURL" required className="input input-bordered w-full" />
+                        <input type="text" name="photoURL" required className="input input-bordered w-full" />
                     </div>
                     <div>
                         <label className="block mb-1 font-semibold">Password</label>
-                        <input autoComplete="new-password" type="password" name="password" required className="input input-bordered w-full" />
+                        <input type="password" name="password" required className="input input-bordered w-full" />
                     </div>
                     <button type="submit" className="btn btn-primary w-full">Register</button>
                 </form>
