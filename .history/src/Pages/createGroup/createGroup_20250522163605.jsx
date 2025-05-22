@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
-import Swal from 'sweetalert2';
 
 const CreateGroup = () => {
     const { user } = useContext(AuthContext);
@@ -22,25 +21,9 @@ const CreateGroup = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Group Created!',
-                        text: 'Your hobby group has been successfully created.',
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK'
-                    });
-                    form.reset();
-                }
-                else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong. Please try again.',
-                    });
-                }
+                console.log("after added to db", data);
             });
-
+            
     }
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import img from '../../assets/hero.png'
 import { Link } from 'react-router';
 
 const AllGroups = () => {
@@ -27,7 +28,7 @@ const AllGroups = () => {
                         <button className='btn btn-primary'>See More</button>
                     </Link>
                 </div>
-                <div className="card space-y-1">
+                                <div className="card space-y-1">
                     <img className='rounded-2xl' src={group.imageUrl} />
                     <h2 className='font-bold'>{group.groupName}</h2>
                     <p><span className='font-semi-bold'>Category:</span> {group.hobbyCategory}</p>
@@ -36,16 +37,7 @@ const AllGroups = () => {
                         <button className='btn btn-primary'>See More</button>
                     </Link>
                 </div>
-                <div className="card space-y-1">
-                    <img className='rounded-2xl' src={group.imageUrl} />
-                    <h2 className='font-bold'>{group.groupName}</h2>
-                    <p><span className='font-semi-bold'>Category:</span> {group.hobbyCategory}</p>
-                    <p>Start Date: {group.startDate}</p>
-                    <Link to={`/group/${group._id}`}>
-                        <button className='btn btn-primary'>See More</button>
-                    </Link>
-                </div>
-
+                
             </div>
         </div>
     );

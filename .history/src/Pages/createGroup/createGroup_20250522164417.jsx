@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
+import toast from "react-hot-toast";
 import Swal from 'sweetalert2';
 
 const CreateGroup = () => {
@@ -33,11 +34,7 @@ const CreateGroup = () => {
                     form.reset();
                 }
                 else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong. Please try again.',
-                    });
+                    toast.error('Something went wrong. Please try again.')
                 }
             });
 
