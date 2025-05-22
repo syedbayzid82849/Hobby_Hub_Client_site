@@ -21,7 +21,7 @@ const CreateGroup = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log("after added to db", data);
+                console.log("after added to db"data);
             });
     }
 
