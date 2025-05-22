@@ -20,34 +20,17 @@ const Navbar = () => {
     const links = (
         <>
             <li>
-                <NavLink
-                    to="/"
-                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                >Home</NavLink>
+                <NavLink to="/" className="text-black">Home</NavLink>
             </li>
             <li>
-                <NavLink
-                    to="/all-groups"
-                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                >All Groups</NavLink>
+                <NavLink to="/companies" className="text-black">All Groups</NavLink>
             </li>
-            {
-                user && (
-                    <>
-                        <li>
-                            <NavLink
-                                to="/create-group"
-                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                            >Create Group</NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/my-group"
-                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                            >My Groups</NavLink>
-                        </li>
-                    </>
-                )}
+            <li>
+                <NavLink to="/create" className="text-black">Create Group</NavLink>
+            </li>
+            <li>
+                <NavLink to="/blogs" className="text-black">My Groups</NavLink>
+            </li>
         </>
     );
 
@@ -112,7 +95,7 @@ const Navbar = () => {
                             src={user?.photoURL ? user.photoURL : profile}
                             alt="Profile"
                         />
-                    </Link>
+                    </Link> 
                 </div>
                 {user ? (
                     <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">

@@ -5,8 +5,10 @@ import { AuthContext } from '../../Contexts/AuthContext';
 import profile from '../../assets/profile.jpg';
 
 
+
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext);
+    console.log(user.photoURL);
 
     const handleLogOutBtn = () => {
         logOutUser().then(() => {
@@ -15,39 +17,22 @@ const Navbar = () => {
             console.error(error);
         });
     };
-
+    
 
     const links = (
         <>
             <li>
-                <NavLink
-                    to="/"
-                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                >Home</NavLink>
+                <NavLink to="/" className="text-black">Home</NavLink>
             </li>
             <li>
-                <NavLink
-                    to="/all-groups"
-                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                >All Groups</NavLink>
+                <NavLink to="/companies" className="text-black">All Groups</NavLink>
             </li>
-            {
-                user && (
-                    <>
-                        <li>
-                            <NavLink
-                                to="/create-group"
-                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                            >Create Group</NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/my-group"
-                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                            >My Groups</NavLink>
-                        </li>
-                    </>
-                )}
+            <li>
+                <NavLink to="/blogs" className="text-black">Create Group</NavLink>
+            </li>
+            <li>
+                <NavLink to="/blogs" className="text-black">My Groups</NavLink>
+            </li>
         </>
     );
 
@@ -105,15 +90,11 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end gap-2">
-                <div className="tooltip tooltip-bottom" data-tip={user?.displayName || "User"}>
+                {
                     <Link to="/profile">
-                        <img
-                            className="w-10 h-10 border border-black rounded-full"
-                            src={user?.photoURL ? user.photoURL : profile}
-                            alt="Profile"
-                        />
+                        <img className='w-13 border-1 border-black rounded-full' src={user ? : profile} alt='' />
                     </Link>
-                </div>
+                }
                 {user ? (
                     <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
                         LogOut

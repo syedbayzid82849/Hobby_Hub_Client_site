@@ -6,9 +6,8 @@ import Register from '../Pages/Register/Register';
 import Login from '../Pages/Login/Login';
 import Profile from '../Pages/Profile/Profile';
 import CreateGroup from '../Pages/createGroup/createGroup';
-import MyGroup from '../Pages/myGroup/myGroup'
+import MyGroup from '../pages/myGroup/myGroup'
 import PrivateRoute from './PrivateRoute';
-import AllGroups from '../Pages/AllGroups/AllGroups'
 
 const router = createBrowserRouter(
     [
@@ -34,8 +33,7 @@ const router = createBrowserRouter(
                     element: <Profile></Profile>
                 },
                 {
-                    path: '/all-groups', 
-                    element: <AllGroups></AllGroups>
+                    path: '/AllGroups'
                 },
                 {
                     path: '/create-group',

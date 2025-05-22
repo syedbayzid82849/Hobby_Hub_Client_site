@@ -20,34 +20,22 @@ const Navbar = () => {
     const links = (
         <>
             <li>
-                <NavLink
-                    to="/"
-                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                >Home</NavLink>
+                <NavLink to="/" className="text-black">Home</NavLink>
             </li>
             <li>
-                <NavLink
-                    to="/all-groups"
-                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                >All Groups</NavLink>
+                <NavLink to="/companies" className="text-black">All Groups</NavLink>
             </li>
             {
-                user && (
-                    <>
-                        <li>
-                            <NavLink
-                                to="/create-group"
-                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                            >Create Group</NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/my-group"
-                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
-                            >My Groups</NavLink>
-                        </li>
-                    </>
-                )}
+    user && (
+        <>
+            <li>
+                <NavLink to="/create-group" className="text-black">Create Group</NavLink>
+            </li>
+            <li>
+                <NavLink to="/my-group" className="text-black">My Groups</NavLink>
+            </li>
+        </>
+    )            }
         </>
     );
 
