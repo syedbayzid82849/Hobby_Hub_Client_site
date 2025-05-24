@@ -1,5 +1,5 @@
 const handleDelete = (id) => {
-    fetch(`http://localhost:3000/delete-group/${id}`, {
+    fetch(`https://hobbe-hub-server.vercel.app/delete-group/${id}`, {
         method: 'DELETE'
     })
     .then(res => res.json())

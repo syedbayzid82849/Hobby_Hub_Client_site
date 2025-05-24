@@ -38,7 +38,7 @@ const router = createBrowserRouter(
                 },
                 {
                     path: '/all-groups',
-                    loader: () => fetch('http://localhost:3000/all-groups'),
+                    loader: () => fetch('https://hobbe-hub-server.vercel.app/all-groups'),
                     element:
                         <PrivateRoute>
                             <AllGroups></AllGroups>
@@ -60,7 +60,7 @@ const router = createBrowserRouter(
                 },
                 {
                     path: '/update-group/:id',
-                    loader:({})=> fetch(`http://localhost:3000/all-groups/${id}`),
+                    loader:({})=> fetch(`https://hobbe-hub-server.vercel.app/all-groups/${id}`),
                     element: 
                     <PrivateRoute>
                         <UpdateMyGroupInfo></UpdateMyGroupInfo>
@@ -68,7 +68,7 @@ const router = createBrowserRouter(
                 }
                 {
                     path: '/all-groups/:id',
-                    loader: ({ params }) => fetch(`http://localhost:3000/all-groups/${params.id}`),
+                    loader: ({ params }) => fetch(`https://hobbe-hub-server.vercel.app/all-groups/${params.id}`),
                     element:
                         <PrivateRoute>
                             <SingleGroupDetails></SingleGroupDetails>
