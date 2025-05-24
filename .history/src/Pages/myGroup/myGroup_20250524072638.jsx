@@ -10,7 +10,7 @@ const MyGroups = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`https://hobbe-hub-server.vercel.app/my-groups/${user.email}`)
+            fetch(`http://localhost:3000/my-groups/${user.email}`)
                 .then(res => res.json())
                 .then(data => setMyGroups(data));
         }
@@ -20,7 +20,7 @@ const MyGroups = () => {
         const proceed = window.confirm('Are you sure you want to delete this group?');
         if (!proceed) return;
 
-        fetch(`https://hobbe-hub-server.vercel.app/delete-group/${}`, {
+        fetch(`http://localhost:3000/delete-group/${}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

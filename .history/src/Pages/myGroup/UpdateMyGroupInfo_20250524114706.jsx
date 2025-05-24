@@ -8,7 +8,7 @@ const UpdateMyGroupInfo = () => {
         const newCategory = Object.fromEntries(formData.entries());
         console.log(newCategory);
 
-        fetch(`https://hobbe-hub-server.vercel.app/update-group/${id}`, {
+        fetch(`http://localhost:3000/update-group/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

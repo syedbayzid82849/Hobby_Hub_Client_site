@@ -10,7 +10,7 @@ const MyGroups = () => {
 
     console.log(myGroups)
 
-    fetch(`https://hobbe-hub-server.vercel.app/groups${user.email}`)
+    fetch(`http://localhost:3000/groups${user.email}`)
         .then(res => res.json())
         .then(data => setMyGroups(data));
 

@@ -12,7 +12,7 @@ const CreateGroup = () => {
         console.log(categoriesData);
 
         // send group data to db
-        fetch('https://hobbe-hub-server.vercel.app/all-groups')
+        fetch('http://localhost:3000/all-groups')
             .then(res => res.json())
             .then(data => {
                 console.

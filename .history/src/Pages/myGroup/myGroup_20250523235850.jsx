@@ -10,7 +10,7 @@ const MyGroups = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`https://hobbe-hub-server.vercel.app/groups?email=${email}`)
+            fetch(`http://localhost:3000/groups?email=${email}`)
                 .then(res => res.json())
                 .then(data => setMyGroups(data));
         }

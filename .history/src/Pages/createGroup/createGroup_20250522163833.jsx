@@ -13,7 +13,7 @@ const CreateGroup = () => {
         console.log(newCategory);
 
         // send group data to db
-        fetch('https://hobbe-hub-server.vercel.app/all-groups', {
+        fetch('http://localhost:3000/all-groups', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
