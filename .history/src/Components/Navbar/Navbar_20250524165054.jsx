@@ -127,6 +127,7 @@ const Navbar = () => {
                         </NavLink>
                     </>
                 )}
+                <ThemeToggle />
             </div>
         </div>
     );

@@ -3,6 +3,7 @@ import logo from '../../assets/logo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
 import profile from '../../assets/profile.jpg';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 
 const Navbar = () => {
@@ -127,6 +128,7 @@ const Navbar = () => {
                         </NavLink>
                     </>
                 )}
+                <ThemeToggle />
             </div>
         </div>
     );

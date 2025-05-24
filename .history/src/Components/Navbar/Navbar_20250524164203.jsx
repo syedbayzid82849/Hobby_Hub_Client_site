@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
 import profile from '../../assets/profile.jpg';
-
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext);
@@ -15,19 +15,18 @@ const Navbar = () => {
         });
     };
 
-
     const links = (
         <>
             <li>
                 <NavLink
                     to="/"
-                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
+                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-gray-900 dark:text-gray-100"}
                 >Home</NavLink>
             </li>
             <li>
                 <NavLink
                     to="/all-groups"
-                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
+                    className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-gray-900 dark:text-gray-100"}
                 >All Groups</NavLink>
             </li>
             {
@@ -36,13 +35,13 @@ const Navbar = () => {
                         <li>
                             <NavLink
                                 to="/create-group"
-                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
+                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-gray-900 dark:text-gray-100"}
                             >Create Group</NavLink>
                         </li>
                         <li>
                             <NavLink
                                 to="/my-groups"
-                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-black"}
+                                className={({ isActive }) => isActive ? "text-blue-600 font-semibold" : "text-gray-900 dark:text-gray-100"}
                             >My Groups</NavLink>
                         </li>
                     </>
@@ -50,12 +49,11 @@ const Navbar = () => {
         </>
     );
 
-
     return (
-        <div className="navbar bg-[#f6f8fa] shadow-sm text-black">
+        <div className="navbar bg-[#f6f8fa] dark:bg-gray-900 shadow-sm text-gray-900 dark:text-gray-100">
             <div className="navbar-start ">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-black">
+                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-gray-900 dark:text-gray-100">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -73,29 +71,40 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-white text-black rounded-box z-1 mt-3 w-52 p-2 shadow"
+                        className="menu menu-sm dropdown-content bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
                     >
                         {links}
                         {user ? (
-                            <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                            <NavLink
+                                onClick={handleLogOutBtn}
+                                to="/"
+                                className="btn md:inline-flex text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600"
+                            >
                                 LogOut
                             </NavLink>
                         ) : (
                             <>
-                                <NavLink to="/login" className="btn  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                                <NavLink
+                                    to="/login"
+                                    className="btn md:inline-flex text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600"
+                                >
                                     Log in
                                 </NavLink>
-                                <NavLink to="/register" className="btn mt-2  md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                                <NavLink
+                                    to="/register"
+                                    className="btn mt-2 md:inline-flex text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600"
+                                >
                                     Register
                                 </NavLink>
                             </>
                         )}
                     </ul>
-
                 </div>
                 <NavLink to='/'>
-                    <button className="btn flex items-center text-xl text-black bg-transparent shadow-none hover:bg-transparent hover:shadow-none focus:shadow-none active:shadow-none border-none "><img src={logo} alt="Logo" className="w-6" />
-                        HobbyHub</button>
+                    <button className="btn flex items-center text-xl text-gray-900 dark:text-gray-100 bg-transparent shadow-none hover:bg-transparent hover:shadow-none focus:shadow-none active:shadow-none border-none">
+                        <img src={logo} alt="Logo" className="w-6 mr-2" />
+                        HobbyHub
+                    </button>
                 </NavLink>
             </div>
 
@@ -107,26 +116,37 @@ const Navbar = () => {
                 <div className="tooltip tooltip-bottom" data-tip={user?.displayName || "User"}>
                     <Link to="/profile">
                         <img
-                            className="w-10 h-10 border border-black rounded-full"
+                            className="w-10 h-10 border border-gray-900 dark:border-gray-100 rounded-full"
                             src={user?.photoURL ? user.photoURL : profile}
                             alt="Profile"
                         />
                     </Link>
                 </div>
                 {user ? (
-                    <NavLink onClick={() => { handleLogOutBtn() }} to="/" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                    <NavLink
+                        onClick={handleLogOutBtn}
+                        to="/"
+                        className="btn hidden md:inline-flex text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >
                         LogOut
                     </NavLink>
                 ) : (
                     <>
-                        <NavLink to="/login" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                        <NavLink
+                            to="/login"
+                            className="btn hidden md:inline-flex text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600"
+                        >
                             Log in
                         </NavLink>
-                        <NavLink to="/register" className="btn hidden md:inline-flex text-black bg-white border border-gray-300 hover:bg-gray-100">
+                        <NavLink
+                            to="/register"
+                            className="btn hidden md:inline-flex text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600"
+                        >
                             Register
                         </NavLink>
                     </>
                 )}
+                <ThemeToggle />
             </div>
         </div>
     );
