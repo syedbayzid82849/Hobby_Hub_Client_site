@@ -102,7 +102,7 @@ const UpdateMyGroupInfo = () => {
 
                     <label>
                         <span className="label-text font-medium">Display Name</span>
-                        <input name="displayName" type="text" defaultValue={displayName} readOnly className="input input-bordered w-full bg-gray-100" />
+                        <input name="displayName" type="text" defaultValue={displayName}  className="input input-bordered w-full bg-gray-100" />
                     </label>
 
                     <label>
