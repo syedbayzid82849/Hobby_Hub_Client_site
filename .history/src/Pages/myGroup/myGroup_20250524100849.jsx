@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../../Contexts/AuthContext';
 import { useContext } from "react";
-import Swal from 'sweetalert2';
 
 
 const MyGroups = () => {
@@ -26,7 +25,7 @@ const MyGroups = () => {
                 if (data.deletedCount > 0) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'You have deleted!',
+                        title: 'You have joined the group!',
                         toast: true,
                         position: 'top-end',
                         timer: 2000,

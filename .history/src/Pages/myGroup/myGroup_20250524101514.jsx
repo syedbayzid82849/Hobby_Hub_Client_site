@@ -26,7 +26,7 @@ const MyGroups = () => {
                 if (data.deletedCount > 0) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'You have deleted!',
+                        title: 'You have  de!',
                         toast: true,
                         position: 'top-end',
                         timer: 2000,

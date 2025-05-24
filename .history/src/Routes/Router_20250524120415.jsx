@@ -11,7 +11,6 @@ import PrivateRoute from './PrivateRoute';
 import AllGroups from '../Pages/AllGroups/AllGroups'
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import SingleGroupDetails from '../Pages/AllGroups/SingleGroupDetails';
-import UpdateMyGroupInfo from '../Pages/myGroup/UpdateMyGroupInfo';
 
 const router = createBrowserRouter(
     [
@@ -59,13 +58,10 @@ const router = createBrowserRouter(
                         </PrivateRoute>
                 },
                 {
-                    path: '/update-group/:id',
-                    loader: ({ params }) => fetch(`http://localhost:3000/all-groups/${params.id}`),
-                    element:
-                        <PrivateRoute>
-                            <UpdateMyGroupInfo></UpdateMyGroupInfo>
-                        </PrivateRoute>
-                },
+                    path: '/update-group',
+                    element: 
+                    <Pre
+                }
                 {
                     path: '/all-groups/:id',
                     loader: ({ params }) => fetch(`http://localhost:3000/all-groups/${params.id}`),

@@ -60,11 +60,11 @@ const router = createBrowserRouter(
                 },
                 {
                     path: '/update-group/:id',
-                    loader: ({ params }) => fetch(`http://localhost:3000/all-groups/${params.id}`),
-                    element:
-                        <PrivateRoute>
-                            <UpdateMyGroupInfo></UpdateMyGroupInfo>
-                        </PrivateRoute>
+                    loader:({params})=> fetch(`http://localhost:3000/all-groups/${params.id}`),
+                    element: 
+                    <PrivateRoute>
+                        <UpdateMyGroupInfo></UpdateMyGroupInfo>
+                    </PrivateRoute>
                 },
                 {
                     path: '/all-groups/:id',
