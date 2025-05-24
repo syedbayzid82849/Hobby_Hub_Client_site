@@ -17,7 +17,10 @@ const MyGroups = () => {
     }, [user]);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3000/delete-group/${id}`, {
+        const proceed = window.confirm('Are you sure you want to delete this group?');
+        if (!proceed) return;
+
+        fetch(`http://localhost:3000/delete-group/${}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -27,7 +30,7 @@ const MyGroups = () => {
                     setMyGroups(myGroups.filter(group => group._id !== id));
                 }
             })
-            .catch(err => console.error(err));
+            .catch(err => console.l(err));
     };
 
     return (

@@ -16,18 +16,15 @@ const MyGroups = () => {
         }
     }, [user]);
 
-    const handleDelete = (id) => {
-        fetch(`http://localhost:3000/delete-group/${id}`, {
+    const handleDelete = (email) => {
+        console.log(email);
+        fetch(`http://localhost:3000/delete-group/${email}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
-                if (data.deletedCount > 0) {
-                    alert('Group deleted successfully');
-                    setMyGroups(myGroups.filter(group => group._id !== id));
-                }
+                console.log(data);
             })
-            .catch(err => console.error(err));
     };
 
     return (
@@ -48,6 +45,7 @@ const MyGroups = () => {
                     <tbody>
                         {
                             myGroups.map(group => {
+                                clg
                                 return (
                                     <tr key={group._id}>
                                         <td>
@@ -68,7 +66,7 @@ const MyGroups = () => {
                                                 </button>
                                             </Link>
                                             <button
-                                                onClick={() => handleDelete(group._id)}
+                                                onClick={() => handleDelete(group.email)}
                                                 className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
                                             >
                                                 Delete

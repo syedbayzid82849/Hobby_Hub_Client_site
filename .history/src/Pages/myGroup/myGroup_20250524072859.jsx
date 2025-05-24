@@ -17,17 +17,14 @@ const MyGroups = () => {
     }, [user]);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3000/delete-group/${id}`, {
+        fetch(`http://localhost:3000/delete-group/${user.email}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
-                if (data.deletedCount > 0) {
-                    alert('Group deleted successfully');
-                    setMyGroups(myGroups.filter(group => group._id !== id));
-                }
+                console.log(data);
             })
-            .catch(err => console.error(err));
+            .catch(err => console.log(err));
     };
 
     return (

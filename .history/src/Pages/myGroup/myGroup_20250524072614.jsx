@@ -17,7 +17,10 @@ const MyGroups = () => {
     }, [user]);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3000/delete-group/${id}`, {
+        const proceed = window.confirm('Are you sure you want to delete this group?');
+        if (!proceed) return;
+
+        fetch(`http://localhost:3000/delete-group/${}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

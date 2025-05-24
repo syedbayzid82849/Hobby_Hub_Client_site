@@ -68,7 +68,7 @@ const MyGroups = () => {
                                                 </button>
                                             </Link>
                                             <button
-                                                onClick={() => handleDelete(group._id)}
+                                                onClick={() => handleDelete(group.id)}
                                                 className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
                                             >
                                                 Delete
