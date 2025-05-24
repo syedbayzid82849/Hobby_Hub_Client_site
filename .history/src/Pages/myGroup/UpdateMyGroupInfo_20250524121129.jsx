@@ -14,7 +14,7 @@ const UpdateMyGroupInfo = () => {
         const updatedGroup = Object.fromEntries(formDataformData.entries());
         console.log(updatedGroup);
 
-        fetch(`http://localhost:3000/all-groups/${id}`, {
+        fetch(`https://hobbe-hub-server.vercel.app/all-groups/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

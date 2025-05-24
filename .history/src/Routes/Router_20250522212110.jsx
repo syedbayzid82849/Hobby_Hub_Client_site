@@ -35,7 +35,7 @@ const router = createBrowserRouter(
                 },
                 {
                     path: '/all-groups',
-                    loader: 'http://localhost:3000/all-groups',
+                    loader: 'https://hobbe-hub-server.vercel.app/all-groups',
                     element:
                         <PrivateRoute>
                             <AllGroups></AllGroups>
